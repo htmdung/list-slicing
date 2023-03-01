@@ -62,15 +62,19 @@ def custom_extend(input_list, second_list):
 
     For example:
 
-        >>> months = ['Jan', 'Feb', 'Mar']
-        >>> custom_extend(months, ['Apr', 'May'])
+        >>> months = ['Jan', 'Feb', 'Mar'] 
+        >>> custom_extend(months, ['Apr', 'May'])  # pass months list to the function
         >>> months == ['Jan', 'Feb', 'Mar', 'Apr', 'May']
         True
 
     """
+    print(input_list)
 
-    pass
+    input_list[:] = input_list + second_list # modifies the input_list that was passed in (modifies that list in memory, so the original list is updated)
 
+    # new_list = input_list + second_list # assigns the input_list identifier to a brand new list 
+    print(input_list)
+    
 
 def custom_insert(input_list, index, value):
     """Insert value at index in the list.
@@ -84,11 +88,18 @@ def custom_insert(input_list, index, value):
         >>> custom_insert(months, 1, 'Feb')
         >>> months == ['Jan', 'Feb', 'Mar']
         True
-
     """
+    input_list[index:index] = [value]
+    # 'Feb' --> ['F', 'e', 'b']
+    # ['Feb']
 
-    pass
-
+    # 'Feb'[0] = 'F'
+    # 'Feb'[1] = 'e'
+    
+   
+months = ['Jan', 'Mar']
+custom_insert(months, 1, 'Feb')
+print(months)
 
 def custom_remove(input_list, value):
     """Remove the first item of the value in list.
