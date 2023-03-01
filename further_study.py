@@ -97,9 +97,9 @@ def custom_insert(input_list, index, value):
     # 'Feb'[1] = 'e'
     
    
-months = ['Jan', 'Mar']
-custom_insert(months, 1, 'Feb')
-print(months)
+# months = ['Jan', 'Mar']
+# custom_insert(months, 1, 'Feb')
+# print(months)
 
 def custom_remove(input_list, value):
     """Remove the first item of the value in list.
@@ -116,9 +116,11 @@ def custom_remove(input_list, value):
         True
 
     """
-
-    pass
-
+    index = input_list.index(value)
+    input_list[index:index+1] = []
+notes = ['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Ti', 'Do']
+custom_remove(notes, 'Do')
+print(notes)
 
 def custom_pop(input_list):
     """Remove the last item in the list and returns it.
